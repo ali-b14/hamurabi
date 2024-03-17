@@ -1,6 +1,6 @@
 package hammurabi.docs.matuszek;
 
-import org.junit.Assert;
+import hammurabi.src.main.Hammurabi;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,7 +26,6 @@ public class HammurabiTest {
         int expectedAcresOwned = 1001;
         int landValue = 19;
         int acresToBuy = 1;
-        int BushelsSpentBuyingLand = landValue * acresToBuy;
 
 
         int actualAcresOwned = hammurabi.askHowManyAcresToBuy();

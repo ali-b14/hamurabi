@@ -2,7 +2,7 @@
 //
 //public class Hammurabi {
 //}
-package hammurabi.docs.matuszek;               // package declaration
+package hammurabi.src.main;               // package declaration
 import java.util.Random;         // imports go here
 import java.util.Scanner;
 import java.util.InputMismatchException;
