@@ -9,6 +9,17 @@ import java.util.Scanner;
 public class Hammurabi {         // must save in a file named Hammurabi.java
     Random rand = new Random();  // this is an instance variable
     Scanner scanner = new Scanner(System.in);
+    int year = 1;
+    int population = 100;
+    int acresOwned = 1000;
+    int bushels = 2800;
+    int landValue = 19;
+    int acresToBuy = 0;
+
+    public Hammurabi(){
+        
+    }
+
 
     public static void main(String[] args) { // required in every Java program
         new Hammurabi().playGame();
