@@ -33,7 +33,7 @@ public class Hammurabi {
         // statements go after the declarations
         for (int i = 1; i <= 3 ; i++) {
             startGameMessage();
-//            askHowManyAcresToBuy(acresOwned);
+            askHowManyAcresToBuy();
 
 //            System.out.println(endOfYearSummary());
         }
@@ -43,20 +43,21 @@ public class Hammurabi {
 
     //other methods go here
 
-    public int askHowManyAcresToBuy(int acresToBuy){
-
+    public int askHowManyAcresToBuy(){
+            int acresToBuy = 0;
             while (true) {
                 System.out.print("How many acres would you like to buy? ");
                 try {
                     acresToBuy = scanner.nextInt();
-                    if(acresToBuy > bushels){
+                    int bushelsSpentBuyingLand = landValue * acresToBuy;
+//                    acresToBuy = 1;
+                    if(bushelsSpentBuyingLand > bushels){
                         System.out.println("O Great Hamurabi, surely you jest!\\nYou must have enough bushels to pay for this land.");
-                    } else if (acresToBuy <= bushels && acresToBuy > 0) {
-                        int bushelsSpentBuyingLand = landValue * acresToBuy;
+                    } else if (bushelsSpentBuyingLand <= bushels && bushelsSpentBuyingLand > 0) {
                         bushels -= bushelsSpentBuyingLand;
                         acresOwned += acresToBuy;
-                        return acresOwned;
                     }
+                    return acresOwned;
                 }
                 catch (InputMismatchException e) {
                     System.out.println("\"" + scanner.next() + "\" isn't a  valid input!");
@@ -74,7 +75,8 @@ public class Hammurabi {
                 "    We harvested 3000 bushels at 3 bushels per acre.\n" +
                 "    Rats destroyed 200 bushels, leaving 2800 bushels in storage.\n" +
                 "    The city owns 1000 acres of land.\n" +
-                "    Land is currently worth 19 bushels per acre. ");
+                "    Land is currently worth 19 bushels per acre. \n    bushels remaining: " + bushels + "\n    acresOwned: " + acresOwned);
+
     }
     public String endOfYearSummary(){
         String answer = "\nHAMURABI:  I BEG TO REPORT TO YOU,\n" +
