@@ -1,5 +1,6 @@
 package hammurabi.docs.matuszek;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,42 +20,57 @@ public class HammurabiTest {
     }
 
     @Test
-    public void testBuy () {
+    public void testaskHowManyAcresToBuy () {
+
         Hammurabi hammurabi = new Hammurabi();
+        int expectedAcresOwned = 1010;
+        int landValue = 19;
+        int wantsToBuy = 10;
+        int bushels = 2800;
+        int amountOfLandBought = landValue * wantsToBuy;
+
+
+        int actualAcresOwned = hammurabi.askHowManyAcresToBuy(1000);
+
+
+        assertEquals(expectedAcresOwned, actualAcresOwned);
+
+
+
     }
 
 //    @Test
 //    public void plagueDeaths() {
 //    }
 
-    @Test
-    public void testStarvationDeaths() {
-        int deaths = ham.starvationDeaths(100, 1639);
+//    @Test
+//    public void testStarvationDeaths() {
+//        int deaths = ham.starvationDeaths(100, 1639);
+//
+//        deaths = ham.starvationDeaths(10, 2500);
+//        if (deaths < 0) {
+//        }
+//
+//        assertEquals("Wrong number of starvations deaths.", 1, deaths);
+//    }
 
-        deaths = ham.starvationDeaths(10, 2500);
-        if (deaths < 0) {
-        }
-
-        assertEquals("Wrong number of starvations deaths.", 1, deaths);
-    }
-
-    @Test
-    public void testUprising () {
-    }
-
-    @Test
-        public void testImmigrants () {
-    }
-
-    @Test
-        public void testHarvest () {
-    }
-
-    @Test
-        public void testGrainEatenByRats () {
-    }
-
-    @Test
-        public void testNewCostOfLand () {
-    }
+//    @Test
+//    public void testUprising () {
+//    }
+//
+//    @Test
+//        public void testImmigrants () {
+//    }
+//
+//    @Test
+//        public void testHarvest () {
+//    }
+//
+//    @Test
+//        public void testGrainEatenByRats () {
+//    }
+//
+//    @Test
+//        public void testNewCostOfLand () {
+//    }
 }
